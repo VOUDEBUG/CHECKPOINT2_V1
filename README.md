@@ -6,10 +6,7 @@
  
  * Estrutura do projeto: Nosso projeto é baseado em HTML, sem utilização de modulos ou bundlers.
  
- # Protótipo 
- 
- 
-# 📝 MVP Checklist:
+ # 📝 MVP Checklist:
 
 - Login (index.html)
 
