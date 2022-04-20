@@ -58,21 +58,25 @@ function obterTarefas(token){
           ).innerHTML = `<li>Nenhuma tarefa para exibir aqui :(</li>`;
         } else {
             document.querySelector("#pendentes").innerHTML = "";
+            document.querySelector(".tarefas-terminadas").innerHTML = "";
+
             tarefas.forEach(function (tarefa) {
-                const li = document.createElement("li");
+
+                if (tarefa.completed == false ){const li = document.createElement("li");
                 const div = document.createElement("div");
                 const div2 = document.createElement("div");
                 const nomeP = document.createTextNode(tarefa.description);
                 const nome = document.createElement("p");
                 const timeStampP = document.createTextNode(tarefa.createdAt);
                 const criacao = document.createElement("p");
-                          
-
+                
                 li.classList.add("tarefa");
                 div.classList.add("not-done");
                 div2.classList.add("descricao");
                 nome.classList.add("nome");
                 criacao.classList.add("timestamp");
+
+                div.setAttribute("id", tarefa.id);
 
                 document.querySelector("#pendentes").appendChild(li);
                 li.appendChild(div);
@@ -82,19 +86,55 @@ function obterTarefas(token){
                 nome.appendChild(nomeP);
                 criacao.appendChild(timeStampP);
 
+                li.onclick = function () {
+                    alert(`Finalizar tarefa ${tarefa.id}?`);
+    
+                    const tarefaCompletar = {
+                        "completed": true
+                    };
+    
+                    fetch(`https://ctd-todo-api.herokuapp.com/v1/tasks/${tarefa.id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-type": "application/json",
+                        authorization: localStorage.jwt
+                    },
+                    body: JSON.stringify(tarefaCompletar)
+                    }).then(response => response.json())
+                    .then(response => alert(`Tarefa concluída`))
+                    .then(obterTarefas(localStorage.jwt))
+                    .catch(erro => alert(erro))
+                    };
 
-          li.onclick = function () {
-            alert(`clicou em: ${tarefa.description}`);
-            document.querySelector(".tarefas-terminadas").appendChild(li);
-           
-          };
+                }else {
 
-        
+                const li = document.createElement("li");
+                const div = document.createElement("div");
+                const div2 = document.createElement("div");
+                const nomeP = document.createTextNode(tarefa.description);
+                const nome = document.createElement("p");
+                const timeStampP = document.createTextNode(tarefa.createdAt);
+                const criacao = document.createElement("p");
+                
+                li.classList.add("tarefa");
+                div.classList.add("done");
+                div2.classList.add("descricao");
+                nome.classList.add("nome");
+                criacao.classList.add("timestamp");
 
-          });
-        }
-      })
-    .catch(erro => alert(erro));
+                div.setAttribute("id", tarefa.id);
+
+                document.querySelector(".tarefas-terminadas").appendChild(li);
+                li.appendChild(div);
+                li.appendChild(div2);
+                div2.appendChild(nome);
+                div2.appendChild(criacao);
+                nome.appendChild(nomeP);
+                criacao.appendChild(timeStampP);           
+
+                }
+            })
+        }}).catch(erro => alert(erro));
 };
 
 
