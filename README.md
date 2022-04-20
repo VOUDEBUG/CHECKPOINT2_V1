@@ -1,6 +1,15 @@
-# Projeto To Do - Checkpoint II
+#  Projeto To Do - Checkpoint II
 
-MVP Checklist:
+# 📌 Introdução
+ Projeto To-Do-List foi desenvolvido para tarefas do dia a dia permitindo criar listas com vários afazeres e oferece alguns recursos de organização. 
+ Feito com interfaces simples para que o usuário consiga ter o maximo de aproveitamento possivel e rápido acesso.
+ 
+ * Estrutura do projeto: Nosso projeto é baseado em HTML, sem utilização de modulos ou bundlers.
+ 
+ # Protótipo 
+ 
+ 
+# 📝 MVP Checklist:
 
 - Login (index.html)
 
@@ -27,18 +36,23 @@ MVP Checklist:
   - [x] Form Nova Tarefa: Ao enviar uma nova tarefa, deve realizar um post para API (/tasks)
   - [x] Quando uma tarefa for adicionada, a lista de tarefas deve ser atualizada
   - [ ] Quando uma tarefa for completada, deve realizar um put para API (tasks/ID_DA_TASK) alterando a chave completed para true
+---
+# 🛠️ Ferramentas
+![html](https://user-images.githubusercontent.com/61170238/164286081-7664fe9e-269b-46bd-adba-48fddd715335.png)
+![css-3](https://user-images.githubusercontent.com/61170238/164286273-2aa27bb0-b33d-4054-91dd-a5e66aa41c95.png)
+![js](https://user-images.githubusercontent.com/61170238/164286283-f1038fb4-4813-4733-bc13-8defbbfc39c3.png)
 
-Melhorias:
+ 🗂️ Pastas:
 
-- Identificar campos invalidos com CSS (ex. borda vermelha)
-
+* assets: Contem os arquivos do projeto como imagens, fontes e vetores.
+* scripts: Contem os arquivos javascript do projeto. Separados por tela.
 ---
 
-Estrutura do projeto
+# 🚩 Melhorias
+ *Identificar campos invalidos com CSS (ex. borda vermelha)
+ 
+ # Colaboradores 
+ * 🧔 Bruno Rodrigues 
+ * 🧑‍🦰Igor Coelho
+ * 👩‍🦰Thalita Machado
 
-Nosso projeto é baseado em HTML, sem utilização de modulos ou bundlers.
-
-Pastas:
-
-- assets: Contem os arquivos do projeto como imagens, fontes e vetores.
-- scripts: Contem os arquivos javascript do projeto. Separados por tela.
