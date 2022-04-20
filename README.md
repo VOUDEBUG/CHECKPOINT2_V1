@@ -46,7 +46,10 @@
 ---
 
 # 🚩 Melhorias
- *Identificar campos invalidos com CSS (ex. borda vermelha)
+ *Identificar campos inválidos com CSS (ex. borda vermelha)
+ *Redirecionar o usuário para a página de tarefas (quando com sessão ativa na máquina)
+ *Limitar a quantiade de caracteres nas entradas do usuário
+ *Separar funções utilizados com frequência para que possam ser reutilizadas.
  
  # Colaboradores 
  * 🧔 Bruno Rodrigues 
